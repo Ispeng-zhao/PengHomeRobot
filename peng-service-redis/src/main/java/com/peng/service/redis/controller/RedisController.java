@@ -1,6 +1,6 @@
-package com.robot.service.redis.controller;
+package com.peng.service.redis.controller;
 
-import com.robot.service.redis.service.RedisService;
+import com.peng.service.redis.service.RedisService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

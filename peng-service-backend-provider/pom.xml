@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <parent>
         <groupId>com.penghome</groupId>
         <artifactId>peng-dependencies</artifactId>
@@ -11,12 +10,11 @@
     </parent>
 
 
-    <artifactId>peng-eureka</artifactId>
-    <name>peng-eureka</name>
+    <artifactId>peng-service-backend-provider</artifactId>
+    <name>peng-service-backend-provider</name>
     <version>${parent.version}</version>
+
     <packaging>jar</packaging>
-
-
 
     <dependencies>
         <!-- Spring Boot Begin -->
@@ -32,8 +30,29 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
         <!-- Spring Cloud End -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <scope>provided</scope>
+            <!--            provide 会让编译通过 但是打包的时候不会打进去  容器自带 servlet-->
+        </dependency>
 
+        <!-- Spring Web Starter -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!-- Spring Web End -->
+
+
+        <!--        数据模型依赖-->
+
+        <!--        数据模型依赖-->
     </dependencies>
 
     <build>
@@ -42,9 +61,10 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.peng.eureka.EurekaApplication</mainClass>
+                    <mainClass>com.peng.service.provider.BackendApplication</mainClass>
                 </configuration>
             </plugin>
         </plugins>
     </build>
+
 </project>

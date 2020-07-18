@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: peng-service-backend-provider
+server:
+  port: 9001
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+feign:
+  hystrix:
+    enable: true

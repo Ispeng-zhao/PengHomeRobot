@@ -1,4 +1,4 @@
-package com.robot.service.redis.service;
+package com.peng.service.redis.service;
 
 public interface RedisService {
     /**

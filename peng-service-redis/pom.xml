@@ -57,7 +57,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.robot.service.redis.RedisApplication</mainClass>
+                    <mainClass>com.peng.service.redis.RedisApplication</mainClass>
                 </configuration>
             </plugin>
         </plugins>
