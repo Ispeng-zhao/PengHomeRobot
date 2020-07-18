@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: peng-service-redis
+  redis:
+    lettuce:
+      pool:
+        max-active: 8
+        max-idle: 8
+        max-wait: -1ms
+        min-idle: 0
+    sentinel:
+      master: mymaster
+      nodes: 192.168.1.17:26379, 192.168.1.17:26380, 192.168.11.7:26381
+      #nodes: localhost:8761
+
+server:
+    port: 8603
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: health,info
