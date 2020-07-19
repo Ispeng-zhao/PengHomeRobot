@@ -12,7 +12,7 @@
 
     <artifactId>peng-service-backend-provider</artifactId>
     <name>peng-service-backend-provider</name>
-    <version>${parent.version}</version>
+    <version>${project.parent.version}</version>
 
     <packaging>jar</packaging>
 
@@ -50,8 +50,12 @@
         <!-- Spring Web End -->
 
 
-        <!--        数据模型依赖-->
-
+         <!--        数据模型依赖-->
+       <dependency>
+            <groupId>com.penghome</groupId>
+            <artifactId>peng-domain</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
         <!--        数据模型依赖-->
     </dependencies>
 
