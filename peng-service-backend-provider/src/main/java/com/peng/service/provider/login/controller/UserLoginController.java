@@ -46,7 +46,7 @@ public class UserLoginController {
 
         //登录结束返回给前台的结果
         Map<String,Object> data= new HashMap<>();
-        data.put("token",token);;
+        data.put("token","123456");;
        /* CookieUtils.setCookie(request,response,"token22222",token,60*60*24);*/
         return new ResponseResult<Map<String,Object>>(20000,"SUCCESS !!",data);
     }

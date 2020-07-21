@@ -2,6 +2,7 @@ package com.peng.service.provider.interceptor;
 
 import com.peng.domain.config.SessionConfig;
 import com.peng.domain.utils.CookieUtils;
+import com.peng.domain.utils.Md5Base64;
 import com.peng.service.provider.feign.redis.RedisService;
 import com.peng.service.provider.login.controller.UserLoginController;
 import org.apache.commons.lang.StringUtils;
@@ -21,7 +22,13 @@ public class WebAdminInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-      //token为空表示一定没有登录
+
+        String token = CookieUtils.getCookieValue(request,SessionConfig.tokeName);
+        String temp_token = Md5Base64.EncodeByMd5("111111");
+        if (!"123456".equals(token)){
+            response.setStatus(5000);
+            return false;
+        }
 
         return true;
     }
